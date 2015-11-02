@@ -2,27 +2,26 @@ package
 {
 	import flash.display.Sprite;
 	import flash.display.StageScaleMode;
-	import org.aswing.ASColor;
+	
 	import org.aswing.AsWingManager;
 	import org.aswing.AsWingUtils;
-	import org.aswing.border.EmptyBorder;
 	import org.aswing.Component;
-	import org.aswing.GradientBackground;
-	import org.aswing.Insets;
 	import org.aswing.JFrame;
 	import org.aswing.JTabbedPane;
 	import org.aswing.JWindow;
-	import org.aswing.plaf.ASColorUIResource;
-	import org.aswing.plaf.basic.frame.BasicFrameTitleBarBG;
-	import org.aswing.plaf.ComponentUI;
 	import org.aswing.SolidBackground;
 	import org.aswing.UIManager;
+	import org.aswing.plaf.ASColorUIResource;
+	import org.aswing.plaf.ComponentUI;
+	
 	import panels.DOMTree;
+	import panels.HeadPane;
 	
 	/**
 	 * ...
 	 * @author Lee
 	 */
+	[SWF (width="640", height="1180", backgroundColor="0x000000")]
 	public class Main extends Sprite 
 	{
 		
@@ -49,6 +48,7 @@ package
 			
 			var tabPanel:JTabbedPane = new JTabbedPane();
 			tabPanel.append(new DOMTree());
+			tabPanel.append(new HeadPane());
 			
 			frame.setContentPane(tabPanel);
 			frame.setClosable(false);
@@ -56,7 +56,7 @@ package
 			
 			window.setBackgroundDecorator(new SolidBackground(UIManager.getColor("window")));
 			window.setContentPane(frame);
-			window.setSizeWH(800, 600);
+			window.setSizeWH(640, 1180);
 			window.show();
 		}
 		
